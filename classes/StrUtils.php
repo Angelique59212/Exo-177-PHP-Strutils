@@ -1,6 +1,6 @@
 <?php
 class StrUtils {
-    private $str = 'Nous sommes entrain d\'apprendre les objets';
+    private string $str ;
 
     /**
      * @return string
@@ -22,10 +22,44 @@ class StrUtils {
     /**
      * @param $str
      */
-    public function __construct($str) {
+    public function __construct(string $str) {
         $this ->setStr($str);
     }
 
+    /**
+     * @return string
+     */
+    public function bold():string {
+        return "<p style='font-weight: bold'>" . $this ->getStr() . "</p>";
+    }
+
+    /**
+     * @return string
+     */
+    public function italic():string {
+        return "<p style='font-style: italic'>" . $this ->getStr() . "</p>";
+    }
+
+    /**
+     * @return string
+     */
+    public function underline():string {
+        return "<p style='text-decoration: underline'>" . $this ->getStr() . "</p>";
+    }
+
+    /**
+     * @return string
+     */
+    public function capitalize():string {
+        return "<p style='text-transform: capitalize'>" . $this ->getStr() . "</p>";
+    }
+
+    /**
+     * @return string
+     */
+    public function uglify() :string {
+        return $this ->bold() . $this ->capitalize() . $this ->underline() . $this ->italic();
+    }
 }
 
 
